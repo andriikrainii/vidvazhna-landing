@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ТИ – БРЕНД | Авторський марафон Svitlana Vidvazhna</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0f1f17;
+            --bg-section: #142820;
+            --emerald: #1a3a2a;
+            --emerald-card: #1d4432;
+            --emerald-light: #245e42;
+            --gold: #c9a96e;
+            --gold-light: #dfc08a;
+            --gold-dark: #a8884d;
+            --rose: #d4a88c;
+            --rose-light: #e8c4ab;
+            --rose-bg: linear-gradient(135deg, #d4a88c 0%, #e8c4ab 50%, #d4a88c 100%);
+            --cream: #f0dcc8;
+            --white: #ffffff;
+            --text-light: rgba(255,255,255,0.75);
+            --text-muted: rgba(255,255,255,0.5);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--bg-dark);
+            color: var(--white);
+            overflow-x: hidden;
+        }
+
+        .serif { font-family: 'Playfair Display', Georgia, serif; }
+
+        /* ===== GOLD DECORATIVE ELEMENTS ===== */
+        .gold-float {
+            position: absolute;
+            font-size: 60px;
+            opacity: 0.15;
+            pointer-events: none;
+            filter: blur(0.5px);
+            color: var(--gold);
+        }
+        .gold-float.f1 { top: 5%; right: 5%; font-size: 80px; transform: rotate(15deg); }
+        .gold-float.f2 { top: 40%; left: 3%; font-size: 50px; transform: rotate(-20deg); }
+        .gold-float.f3 { bottom: 10%; right: 8%; font-size: 70px; transform: rotate(25deg); }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh;
+            background: var(--bg-dark);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(ellipse at 70% 50%, rgba(26,58,42,0.8) 0%, transparent 70%),
+                        radial-gradient(ellipse at 20% 80%, rgba(201,169,110,0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 24px;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        .hero-eyebrow {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            font-style: italic;
+            color: var(--gold-light);
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(42px, 5.5vw, 68px);
+            font-weight: 700;
+            line-height: 1.05;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+        .hero-title .gold { color: var(--gold); }
+        .hero-title .italic {
+            font-style: italic;
+            font-weight: 400;
+            text-transform: none;
+            letter-spacing: 0;
+            font-size: 0.65em;
+            display: block;
+            color: var(--rose-light);
+            margin-top: 8px;
+        }
+        .hero-subtitle {
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--text-light);
+            max-width: 500px;
+            margin-bottom: 32px;
+            font-weight: 300;
+        }
+        .hero-meta {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 36px;
+            flex-wrap: wrap;
+        }
+        .hero-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: var(--emerald-card);
+            border-radius: 12px;
+            border: 1px solid rgba(201,169,110,0.2);
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .hero-chip .val {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            color: var(--gold-light);
+        }
+        .hero-chip .lbl {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+        }
+        .hero-photo { position: relative; text-align: center; }
+        .hero-photo img {
+            width: 100%;
+            max-width: 420px;
+            border-radius: 24px;
+            object-fit: cover;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+        }
+
+        /* ===== BUTTONS ===== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 20px 44px;
+            background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 40%, var(--gold-light) 100%);
+            color: var(--bg-dark);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 60px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 30px rgba(201,169,110,0.3);
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 50px rgba(201,169,110,0.4);
+        }
+        .btn-rose {
+            background: var(--rose-bg);
+            color: var(--emerald);
+        }
+        .btn svg { width: 18px; height: 18px; }
+
+        /* ===== SECTIONS ===== */
+        section {
+            padding: 100px 24px;
+            position: relative;
+            overflow: hidden;
+        }
+        .container { max-width: 1100px; margin: 0 auto; }
+
+        .section-heading {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 4.5vw, 56px);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+        .section-heading .gold { color: var(--gold); }
+        .section-heading .italic {
+            font-style: italic;
+            font-weight: 400;
+            text-transform: none;
+            color: var(--rose-light);
+        }
+        .section-sub {
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin-bottom: 50px;
+        }
+        .text-center { text-align: center; }
+        .text-center .section-sub { margin-left: auto; margin-right: auto; }
+
+        /* ===== NUMBERED CARDS (deck style) ===== */
+        .deck-card {
+            border-radius: 20px;
+            padding: 36px;
+            position: relative;
+            overflow: hidden;
+        }
+        .deck-card-emerald {
+            background: var(--emerald-card);
+            border: 1px solid rgba(201,169,110,0.15);
+        }
+        .deck-card-rose {
+            background: var(--rose-bg);
+            color: var(--emerald);
+        }
+        .deck-card-rose .card-desc { color: rgba(26,58,42,0.75); }
+        .deck-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 64px;
+            font-weight: 700;
+            color: var(--gold);
+            line-height: 1;
+            margin-bottom: 8px;
+            opacity: 0.9;
+        }
+        .deck-card-rose .deck-num { color: var(--emerald); opacity: 0.4; }
+        .card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 14px;
+        }
+        .card-desc {
+            font-size: 14px;
+            line-height: 1.7;
+            color: var(--text-light);
+        }
+
+        /* ===== FOR WHOM ===== */
+        .for-whom { background: var(--bg-dark); }
+        .whom-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+        .whom-grid .deck-card:nth-child(odd) { /* emerald */ }
+        .whom-grid .deck-card:nth-child(even) { /* rose */ }
+
+        /* ===== PROGRAM ===== */
+        .program { background: var(--bg-section); }
+        .mod-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+        .mod-card {
+            background: var(--emerald-card);
+            border-radius: 20px;
+            padding: 36px;
+            border: 1px solid rgba(201,169,110,0.12);
+            position: relative;
+            overflow: hidden;
+        }
+        .mod-card::before {
+            content: attr(data-num);
+            position: absolute;
+            bottom: -20px;
+            right: 10px;
+            font-family: 'Playfair Display', serif;
+            font-size: 140px;
+            font-weight: 700;
+            color: var(--gold);
+            opacity: 0.06;
+            line-height: 1;
+        }
+        .mod-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: var(--rose-bg);
+            color: var(--emerald);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-radius: 8px;
+            margin-bottom: 18px;
+        }
+        .mod-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+        .mod-card ul { list-style: none; padding: 0; }
+        .mod-card li {
+            padding: 10px 0 10px 28px;
+            position: relative;
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text-light);
+            border-bottom: 1px solid rgba(201,169,110,0.08);
+        }
+        .mod-card li:last-child { border-bottom: none; }
+        .mod-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-weight: 700;
+            font-size: 16px;
+        }
+        .mod-card.bonus {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+            color: var(--bg-dark);
+        }
+        .mod-card.bonus h3 { color: var(--bg-dark); }
+        .mod-card.bonus li { color: rgba(15,31,23,0.8); border-color: rgba(15,31,23,0.12); }
+        .mod-card.bonus li::before { color: var(--emerald); }
+        .mod-card.bonus .mod-badge { background: var(--emerald-card); color: var(--gold-light); }
+
+        /* ===== ABOUT ===== */
+        .about { background: var(--bg-dark); }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .about-photo img {
+            width: 100%;
+            border-radius: 24px;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.4);
+        }
+        .about-text p {
+            font-size: 15px;
+            line-height: 1.9;
+            color: var(--text-light);
+            margin-bottom: 16px;
+        }
+        .about-stats {
+            display: flex;
+            gap: 32px;
+            margin-top: 36px;
+        }
+        .stat-box {
+            padding: 20px 28px;
+            background: var(--emerald-card);
+            border-radius: 16px;
+            border: 1px solid rgba(201,169,110,0.15);
+            text-align: center;
+        }
+        .stat-box .num {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--gold);
+        }
+        .stat-box .txt {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        /* ===== RESULTS ===== */
+        .results { background: var(--bg-section); }
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+        .result-item {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            padding: 32px;
+            border-radius: 20px;
+        }
+        .result-item .ri-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--gold);
+            line-height: 1;
+            flex-shrink: 0;
+            opacity: 0.8;
+        }
+        .result-item h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        .result-item p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: var(--text-light);
+        }
+        .result-item.emerald { background: var(--emerald-card); border: 1px solid rgba(201,169,110,0.1); }
+        .result-item.emerald h4 { color: var(--white); }
+        .result-item.rose { background: var(--rose-bg); color: var(--emerald); }
+        .result-item.rose h4 { color: var(--emerald); }
+        .result-item.rose p { color: rgba(26,58,42,0.7); }
+        .result-item.rose .ri-num { color: var(--emerald); opacity: 0.3; }
+
+        /* ===== FORMAT ===== */
+        .format { background: var(--bg-dark); }
+        .format-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        .format-item {
+            text-align: center;
+            padding: 36px 20px;
+            background: var(--emerald-card);
+            border-radius: 20px;
+            border: 1px solid rgba(201,169,110,0.1);
+            transition: transform 0.3s ease;
+        }
+        .format-item:hover { transform: translateY(-4px); }
+        .format-item .fi-icon {
+            width: 64px; height: 64px;
+            margin: 0 auto 18px;
+            background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+        }
+        .format-item h4 {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            color: var(--gold-light);
+        }
+        .format-item p {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* ===== PRICING ===== */
+        .pricing { background: var(--bg-section); }
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .price-card {
+            border-radius: 24px;
+            padding: 48px 32px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background: var(--emerald-card);
+            border: 1px solid rgba(201,169,110,0.15);
+        }
+        .price-card.featured {
+            background: linear-gradient(160deg, var(--gold-dark), var(--gold), var(--gold-light));
+            color: var(--bg-dark);
+            border: none;
+            transform: scale(1.04);
+        }
+        .price-header {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            align-items: center;
+            margin-bottom: 28px;
+        }
+        .price-dates {
+            padding: 8px 16px;
+            border: 1px solid rgba(201,169,110,0.3);
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+        .price-card.featured .price-dates { border-color: rgba(15,31,23,0.3); }
+        .price-tier {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            padding: 8px 24px;
+            background: var(--rose-bg);
+            color: var(--emerald);
+            border-radius: 10px;
+        }
+        .price-card.featured .price-tier { background: var(--emerald-card); color: var(--gold-light); }
+        .price-days {
+            padding: 8px 16px;
+            background: var(--emerald-card);
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gold-light);
+        }
+        .price-card.featured .price-days { background: rgba(15,31,23,0.2); color: var(--bg-dark); }
+        .price-list {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+            margin: 24px 0;
+        }
+        .price-list li {
+            padding: 8px 0 8px 26px;
+            position: relative;
+            font-size: 13px;
+            line-height: 1.6;
+            color: var(--text-light);
+            border-bottom: 1px solid rgba(201,169,110,0.08);
+        }
+        .price-card.featured .price-list li { color: rgba(15,31,23,0.8); border-color: rgba(15,31,23,0.1); }
+        .price-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-weight: 700;
+        }
+        .price-card.featured .price-list li::before { color: var(--emerald); }
+        .price-list li:last-child { border-bottom: none; }
+        .price-amount {
+            margin: 24px 0 8px;
+            position: relative;
+        }
+        .price-old {
+            font-size: 16px;
+            text-decoration: line-through;
+            opacity: 0.5;
+        }
+        .price-current {
+            font-family: 'Playfair Display', serif;
+            font-size: 56px;
+            font-weight: 700;
+            line-height: 1.1;
+        }
+        .price-current span { font-size: 22px; }
+        .price-card .price-current { color: var(--gold); }
+        .price-card.featured .price-current { color: var(--bg-dark); }
+        .price-ribbon {
+            display: inline-block;
+            padding: 14px 0;
+            width: 100%;
+            background: linear-gradient(135deg, #b22222, #dc3545);
+            border-radius: 12px;
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--white);
+            margin-top: 16px;
+            position: relative;
+        }
+        .price-ribbon .old-in-ribbon {
+            font-size: 15px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            text-decoration: line-through;
+            opacity: 0.7;
+            margin-left: 16px;
+            vertical-align: middle;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .price-card .btn { width: 100%; justify-content: center; margin-top: 20px; }
+        .price-card.featured .btn {
+            background: var(--emerald-card);
+            color: var(--gold-light);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        }
+
+        /* ===== MISSION ===== */
+        .mission {
+            background: var(--bg-dark);
+            text-align: center;
+            padding: 80px 24px;
+        }
+        .mission blockquote {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(22px, 3vw, 36px);
+            font-style: italic;
+            line-height: 1.6;
+            color: var(--white);
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        .mission blockquote strong {
+            font-style: normal;
+            color: var(--gold);
+        }
+
+        /* ===== CTA FINAL ===== */
+        .cta-final {
+            background: linear-gradient(135deg, var(--emerald), var(--emerald-light));
+            text-align: center;
+            padding: 80px 24px;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-final::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(ellipse at center, rgba(201,169,110,0.1) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .cta-final .section-heading { margin-bottom: 16px; }
+        .cta-final p {
+            color: var(--text-light);
+            font-size: 17px;
+            margin-bottom: 36px;
+            max-width: 520px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ===== GALLERY ===== */
+        .gallery { background: var(--bg-section); padding: 60px 0; }
+        .gallery-strip {
+            display: flex;
+            gap: 16px;
+            overflow-x: auto;
+            padding: 0 24px;
+            margin-top: 40px;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+        .gallery-strip::-webkit-scrollbar { display: none; }
+        .gallery-strip img {
+            flex-shrink: 0;
+            width: 280px;
+            height: 360px;
+            object-fit: cover;
+            border-radius: 20px;
+            scroll-snap-align: start;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #0a1610;
+            text-align: center;
+            padding: 40px 24px;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+        footer a { color: var(--gold); text-decoration: none; }
+        .footer-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 12px;
+        }
+        .footer-line {
+            width: 60px;
+            height: 1px;
+            background: var(--gold);
+            margin: 16px auto;
+            opacity: 0.3;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 900px) {
+            .hero-container { grid-template-columns: 1fr; text-align: center; }
+            .hero-subtitle { margin-left: auto; margin-right: auto; }
+            .hero-meta { justify-content: center; }
+            .hero-photo { order: -1; }
+            .hero-photo img { max-width: 320px; }
+            .whom-grid { grid-template-columns: 1fr; }
+            .mod-grid { grid-template-columns: 1fr; }
+            .about-grid { grid-template-columns: 1fr; }
+            .results-grid { grid-template-columns: 1fr; }
+            .format-grid { grid-template-columns: repeat(2, 1fr); }
+            .pricing-grid { grid-template-columns: 1fr; max-width: 480px; }
+            .price-card.featured { transform: none; }
+            .price-header { flex-wrap: wrap; }
+        }
+        @media (max-width: 600px) {
+            section { padding: 60px 16px; }
+            .format-grid { grid-template-columns: 1fr; }
+            .hero-meta { flex-direction: column; align-items: center; gap: 12px; }
+            .about-stats { flex-wrap: wrap; gap: 16px; justify-content: center; }
+            .gallery-strip img { width: 220px; height: 280px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+    <span class="gold-float f1">$</span>
+    <span class="gold-float f2">@</span>
+    <div class="hero-container">
+        <div class="hero-text">
+            <p class="hero-eyebrow">Проявленість — нова валюта часу</p>
+            <h1 class="hero-title">
+                <span class="gold">ТИ —</span> БРЕНД
+                <span class="italic">Марафон з ведення блогу і контенту</span>
+            </h1>
+            <p class="hero-subtitle">
+                Авторський марафон від Svitlana Vidvazhna для експертів, які готові стати видимими професійно. Камера, монтаж, контент, ШІ — за 3–4 дні.
+            </p>
+            <div class="hero-meta">
+                <div class="hero-chip">
+                    <div>
+                        <div class="lbl">Старт</div>
+                        <div class="val">09.03</div>
+                    </div>
+                </div>
+                <div class="hero-chip">
+                    <div>
+                        <div class="lbl">Тривалість</div>
+                        <div class="val">4 дні</div>
+                    </div>
+                </div>
+                <div class="hero-chip">
+                    <div>
+                        <div class="lbl">Від</div>
+                        <div class="val">555 ₴</div>
+                    </div>
+                </div>
+            </div>
+            <a href="#pricing" class="btn">
+                Хочу приєднатись
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+        </div>
+        <div class="hero-photo">
+            <img src="images/IMG_4787.JPG" alt="Svitlana Vidvazhna">
+        </div>
+    </div>
+</section>
+
+<!-- ===== FOR WHOM ===== -->
+<section class="for-whom">
+    <div class="container">
+        <h2 class="section-heading">ДЛЯ КОГО МІЙ<br><span class="gold">АВТОРСЬКИЙ МАРАФОН</span></h2>
+        <p class="section-sub">Це не для тих, хто шукає швидкий хайп. Це для тих, хто розуміє: проявленість — це стратегічний актив.</p>
+        <div class="whom-grid">
+            <div class="deck-card deck-card-emerald">
+                <div class="deck-num">1.</div>
+                <div class="card-title">Для експертів без системної проявленості</div>
+                <p class="card-desc">У вас є досвід, практика. Але в блозі хаос, відео виходять нерегулярно, камера «забирає» впевненість. Марафон дає структуру і керованість.</p>
+            </div>
+            <div class="deck-card deck-card-rose">
+                <div class="deck-num">2.</div>
+                <div class="card-title">Для тих, хто готовий масштабуватися</div>
+                <p class="card-desc">У вас є аудиторія або стартова база. Ви розумієте цінність особистого бренду. Вам потрібна професійна подача, стратегічний контент та впевнена присутність у кадрі.</p>
+            </div>
+            <div class="deck-card deck-card-rose">
+                <div class="deck-num">3.</div>
+                <div class="card-title">Для людей із амбіцією впливу</div>
+                <p class="card-desc">Ви відчуваєте потенціал. Вам тісно в режимі «спостерігача». Ви хочете бути видимими, говорити чітко, займати простір та працювати зі своєю аудиторією доросло.</p>
+            </div>
+            <div class="deck-card deck-card-emerald">
+                <div class="deck-num">4.</div>
+                <div class="card-title">Для тих, хто готовий до відповідальності</div>
+                <p class="card-desc">Це не для тих, хто шукає швидкий хайп. І не для тих, хто хоче «спробувати». Це для тих, хто розуміє: проявленість — це стратегічний актив.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== PROGRAM ===== -->
+<section class="program" id="program">
+    <div class="container">
+        <h2 class="section-heading">ПРОГРАМА<br><span class="gold">МАРАФОНУ</span></h2>
+        <p class="section-sub">4 модулі, які проведуть тебе від страху камери до стратегічної системи контенту.</p>
+        <div class="mod-grid">
+            <div class="mod-card" data-num="1">
+                <span class="mod-badge">Мод.1</span>
+                <h3>Проявленість через блог</h3>
+                <ul>
+                    <li>Впевненість у кадрі (психологічні блоки, які заважають проявлятись)</li>
+                    <li>Як знімати себе самостійно</li>
+                    <li>Як говорити в камеру і не зупинятися в кадрі (суфлер)</li>
+                </ul>
+            </div>
+            <div class="mod-card" data-num="2">
+                <span class="mod-badge">Мод.2</span>
+                <h3>Монтаж без ілюзій</h3>
+                <ul>
+                    <li>Які додатки потрібно використовувати (три з тих, які я використовую)</li>
+                    <li>Як змонтувати з гарними переходами, що не виглядають дешево</li>
+                    <li>Закадровий голос</li>
+                    <li>Субтитри</li>
+                </ul>
+            </div>
+            <div class="mod-card" data-num="3">
+                <span class="mod-badge">Мод.3</span>
+                <h3>Робота з хейтом</h3>
+                <ul>
+                    <li>Психологія хейтера, навіть якщо це родич</li>
+                    <li>Як не звертати увагу на хейт та осуд родичів, сусідів</li>
+                </ul>
+            </div>
+            <div class="mod-card" data-num="4">
+                <span class="mod-badge">Мод.4 · VIP</span>
+                <h3>Як працювати з ШІ, як стратегічний інструмент</h3>
+                <ul>
+                    <li>Як налаштувати чат GPT</li>
+                    <li>Як використовувати ШІ для сценаріїв і контенту</li>
+                    <li>Контент-план за 1 годину</li>
+                    <li>Промти — як правильно писати</li>
+                </ul>
+            </div>
+            <div class="mod-card bonus" data-num="✦">
+                <span class="mod-badge">Бонуси</span>
+                <h3>Додаткові матеріали</h3>
+                <ul>
+                    <li>Гайд з 30 порадами для зйомки</li>
+                    <li>Чек-лист «Фундамент особистої сили»</li>
+                    <li>Поради, як не потрапити в БАН</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="about">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-photo">
+                <img src="images/IMG_1095.jpg" alt="Svitlana Vidvazhna">
+            </div>
+            <div class="about-text">
+                <p class="hero-eyebrow" style="margin-bottom: 12px;">Авторка курсу</p>
+                <h2 class="section-heading">SVITLANA<br><span class="gold">VIDVAZHNA</span></h2>
+                <p style="margin-top: 20px;">Засновниця бренду VIDVAZHNA. Практик проявленості, яка пройшла шлях від «мовчу» до «впевнено займаю простір». Спікерка «Трансформаційного Шоу», авторка системного підходу до блогерської зйомки та контент-стратегії.</p>
+                <p>Моя місія — створити нову культуру проявленості. Культуру, де публічність — це не шум, а ясність. Не емоційна імпульсивність, а внутрішня сила. Не випадкові відео, а стратегічна система.</p>
+                <div class="about-stats">
+                    <div class="stat-box">
+                        <div class="num">631K+</div>
+                        <div class="txt">Читачі</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="num">10M+</div>
+                        <div class="txt">Перегляди</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="num">715</div>
+                        <div class="txt">Дописи</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== GALLERY ===== -->
+<section class="gallery">
+    <div class="container text-center">
+        <h2 class="section-heading">ЕНЕРГІЯ <span class="gold">ПРОЯВЛЕНОСТІ</span></h2>
+    </div>
+    <div class="gallery-strip">
+        <img src="images/IMG_1093.jpg" alt="Svitlana Vidvazhna">
+        <img src="images/228FEC23-EB49-44D9-A9EA-6B15D0426BF5.jpg" alt="Svitlana Vidvazhna">
+        <img src="images/004A8D02-6957-41DF-80E3-E473A64DD566.jpg" alt="Svitlana Vidvazhna">
+        <img src="images/IMG_1094.jpg" alt="Svitlana Vidvazhna">
+        <img src="images/IMG_1095.jpg" alt="Svitlana Vidvazhna">
+    </div>
+</section>
+
+<!-- ===== RESULTS ===== -->
+<section class="results">
+    <div class="container">
+        <h2 class="section-heading text-center">ЯКУ КОРИСТЬ ОТРИМУЄТЕ<br><span class="italic">після проходження марафону</span></h2>
+        <div style="height: 50px;"></div>
+        <div class="results-grid">
+            <div class="result-item emerald">
+                <div class="ri-num">1.</div>
+                <div>
+                    <h4>Внутрішня опора в кадрі</h4>
+                    <p>Камера більше не «тисне». З'являється зібраність, чіткість формулювань, контроль пауз. Це не про сміливість — це про керування станом.</p>
+                </div>
+            </div>
+            <div class="result-item rose">
+                <div class="ri-num">2.</div>
+                <div>
+                    <h4>Чітке розуміння, як працює увага</h4>
+                    <p>Як почати відео так, щоб не перегорнули. Де тримати темп. Як завершувати з позицією. Контент стає структурним.</p>
+                </div>
+            </div>
+            <div class="result-item rose">
+                <div class="ri-num">3.</div>
+                <div>
+                    <h4>Технічну незалежність</h4>
+                    <p>Світло. Ракурс. Звук. Монтаж. Без хаосу, без 15 додатків. З'являється контроль над процесом.</p>
+                </div>
+            </div>
+            <div class="result-item emerald">
+                <div class="ri-num">4.</div>
+                <div>
+                    <h4>Систему контенту</h4>
+                    <p>Контент-план формується швидко, теми не закінчуються, сценарії пишуться структурно. ШІ працює як помічник.</p>
+                </div>
+            </div>
+            <div class="result-item emerald">
+                <div class="ri-num">5.</div>
+                <div>
+                    <h4>Психологічну стійкість до хейту</h4>
+                    <p>З'являється дистанція між собою і чужою думкою. Коментарі перестають руйнувати. Публічність сприймається як робоче поле.</p>
+                </div>
+            </div>
+            <div class="result-item rose">
+                <div class="ri-num">6.</div>
+                <div>
+                    <h4>Відчуття масштабу</h4>
+                    <p>Після марафону з'являється дозволеність бути видимою. Більше не виникає внутрішнього «хто я така, щоб...».</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FORMAT ===== -->
+<section class="format">
+    <div class="container text-center">
+        <h2 class="section-heading">ФОРМАТ І <span class="gold">ПІДТРИМКА</span></h2>
+        <p class="section-sub" style="margin-left:auto;margin-right:auto;">Навчання у власному темпі. Структуровані відеоуроки та матеріали (доступ на 3 місяці). Одразу після оплати ви отримуєте чек-лист «Фундамент особистої сили».</p>
+        <div class="format-grid">
+            <div class="format-item">
+                <div class="fi-icon">🎥</div>
+                <h4>Записані уроки</h4>
+                <p>Структуровані відеоуроки в зручному темпі. Доступ на 3 місяці.</p>
+            </div>
+            <div class="format-item">
+                <div class="fi-icon">📡</div>
+                <h4>Щоденні ефіри</h4>
+                <p>Кожен вечір о 20:00 — живий ефір з відповідями та розборами.</p>
+            </div>
+            <div class="format-item">
+                <div class="fi-icon">💬</div>
+                <h4>Telegram-чат</h4>
+                <p>Закритий чат учасників для підтримки та спілкування.</p>
+            </div>
+            <div class="format-item">
+                <div class="fi-icon">🎙</div>
+                <h4>Zoom-зустрічі</h4>
+                <p>Онлайн-зустрічі зі зворотним зв'язком для всіх тарифів.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== MISSION ===== -->
+<section class="mission">
+    <div class="container">
+        <h2 class="section-heading" style="margin-bottom: 40px;">МІСІЯ АВТОРСЬКОГО<br><span class="gold">МАРАФОНУ</span></h2>
+        <blockquote>
+            Створити нову культуру проявленості. Культуру, де публічність — це не шум. <strong>Вивести експертних людей із стану «я готова, але мовчу» у стан «я займаю простір впевнено і професійно».</strong>
+        </blockquote>
+        <p style="color: var(--text-muted); font-size: 15px;">— Svitlana Vidvazhna</p>
+    </div>
+</section>
+
+<!-- ===== PRICING ===== -->
+<section class="pricing" id="pricing">
+    <div class="container text-center">
+        <h2 class="section-heading">ТАРИФИ</h2>
+        <p class="section-sub" style="margin-left:auto;margin-right:auto;">Оплата через WayForPay. При оплаті одразу отримуєш чек-лист «Фундамент особистої сили».</p>
+        <div class="pricing-grid">
+            <!-- STANDARD -->
+            <div class="price-card">
+                <div class="price-header">
+                    <div class="price-dates">09.03 – 11.03</div>
+                    <div class="price-tier">STANDART</div>
+                    <div class="price-days">3 дні</div>
+                </div>
+                <ul class="price-list">
+                    <li>Модуль 1 — Проявленість через блог</li>
+                    <li>Модуль 2 — Монтаж без ілюзій</li>
+                    <li>Модуль 3 — Робота з хейтом</li>
+                    <li>Записані уроки + щоденні ефіри</li>
+                    <li>Telegram-чат та Zoom-зустрічі</li>
+                    <li>Зворотний зв'язок</li>
+                    <li>Домашні завдання</li>
+                </ul>
+                <div class="price-ribbon">
+                    555 грн <span class="old-in-ribbon">замість 2500 грн</span>
+                </div>
+                <a href="#" class="btn" style="margin-top: 20px;">Обираю Стандарт</a>
+            </div>
+            <!-- VIP -->
+            <div class="price-card featured">
+                <div class="price-header">
+                    <div class="price-dates">09.03 – 12.03</div>
+                    <div class="price-tier">VIP</div>
+                    <div class="price-days">4 дні</div>
+                </div>
+                <ul class="price-list">
+                    <li>Модуль 1 — Проявленість через блог</li>
+                    <li>Модуль 2 — Монтаж без ілюзій</li>
+                    <li>Модуль 3 — Робота з хейтом</li>
+                    <li>Модуль 4 — Як працювати з ШІ</li>
+                    <li>Бонусний урок: гайд + поради від БАНу</li>
+                    <li>Зворотний зв'язок</li>
+                </ul>
+                <div class="price-ribbon">
+                    999 грн <span class="old-in-ribbon">замість 5000 грн</span>
+                </div>
+                <a href="#" class="btn" style="margin-top: 20px;">Обираю VIP</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CTA FINAL ===== -->
+<section class="cta-final">
+    <div class="container" style="position: relative; z-index: 1;">
+        <h2 class="section-heading">ГОТОВА <span class="gold">ЗАЯВИТИ</span><br>ПРО СЕБЕ?</h2>
+        <p>Онлайн-випускний 13 березня 2026. Приєднуйся до спільноти сильних жінок, які обирають видимість.</p>
+        <a href="#pricing" class="btn">
+            Приєднатись до марафону
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    <div class="footer-brand">ТИ — БРЕНД</div>
+    <div class="footer-line"></div>
+    <p>&copy; 2026 VIDVAZHNA — Svitlana Vidvazhna. Усі права захищено.</p>
+    <p style="margin-top: 8px;"><a href="https://vidvazhna.com">vidvazhna.com</a></p>
+    <p style="margin-top: 12px;"><a href="offer.html" style="opacity: 0.6;">Публічна оферта</a></p>
+</footer>
+
+</body>
+</html>
